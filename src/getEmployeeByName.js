@@ -4,7 +4,7 @@ const data = require('../data/zoo_data');
 
 function getEmployeeByName(employeeName) {
   // eslint-disable-next-line max-len
-  return employees.find((element) => employeeName === (element.firstName || element.lastName));
+  return employees.find((element) => (employeeName === element.firstName) || (employeeName === element.lastName));
 }
 console.log(getEmployeeByName('Nigel'));
 console.log(getEmployeeByName('Elser'));
