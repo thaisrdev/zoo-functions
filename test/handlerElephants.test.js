@@ -20,6 +20,12 @@ describe('Testes da função HandlerElephants', () => {
     expect(handlerElephants('availability')).toEqual(expect.arrayContaining(['Friday', 'Saturday', 'Sunday', 'Tuesday']));
   });
   it('Não passando argumentos a função deve retornar undefined', () => {
+    expect(handlerElephants()).toBe(undefined);
+  });
+  it('Retorna mensagem quando parâmetro não é string', () => {
+    expect(handlerElephants(10)).toBe('Parâmetro inválido, é necessário uma string');
+  });
+  it('Não passando argumentos a função deve retornar undefined', () => {
     expect(handlerElephants('')).toBeNull();
   });
 });
