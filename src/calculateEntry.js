@@ -1,13 +1,5 @@
 const data = require('../data/zoo_data');
 
-const entrants = [
-  { name: 'Lara Carvalho', age: 5 },
-  { name: 'Frederico Moreira', age: 5 },
-  { name: 'Pedro Henrique Carvalho', age: 5 },
-  { name: 'Maria Costa', age: 18 },
-  { name: 'Núbia Souza', age: 18 },
-  { name: 'Carlos Nogueira', age: 50 },
-];
 function countEntrants(entrants) {
   const contagem = entrants.reduce((acc, { age }) => {
     if (age < 18) {
@@ -33,9 +25,8 @@ function calculateEntry(entrants) {
   const priceChild = data.prices.child;
   const priceAdult = data.prices.adult;
   const priceSenior = data.prices.senior;
-  return ((valores.child * priceChild) + (valores.adult * priceAdult) + (valores.senior * priceSenior));
+  return ((valores.child * priceChild)
+  + (valores.adult * priceAdult) + (valores.senior * priceSenior));
 }
-
-countEntrants(entrants);
 
 module.exports = { calculateEntry, countEntrants };
